@@ -60,8 +60,8 @@ PiratePeliQAnFramework/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/PiratePeliQAnFramework.git
-cd PiratePeliQAnFramework
+git clone https://github.com/rothfick/Framework-PirateSandboxUnderPressure.git
+cd Framework-PirateSandboxUnderPressure
 ```
 
 2. Install dependencies:
