@@ -22,30 +22,88 @@ PiratePeliQAnFramework/
 │   │   │   └── com/
 │   │   │       └── peliQAn/
 │   │   │           └── framework/
-│   │   │               ├── api/             # API client classes
-│   │   │               ├── config/          # Configuration classes
-│   │   │               ├── core/            # Core framework classes
-│   │   │               ├── pages/           # Page Object classes
-│   │   │               │   ├── basic/       # Basic UI page objects
-│   │   │               │   ├── advanced/    # Advanced UI page objects
-│   │   │               │   └── hardcore/    # Hardcore challenge page objects
-│   │   │               ├── pact/            # Pact contract testing classes
-│   │   │               └── utils/           # Utility classes
-│   │   └── resources/                       # Resources like log4j2.xml
+│   │   │               ├── api/                # API client classes
+│   │   │               │   ├── AuthApiClient.java
+│   │   │               │   ├── BaseApiClient.java
+│   │   │               │   ├── TestCasesApiClient.java
+│   │   │               │   ├── TestMethodsApiClient.java
+│   │   │               │   └── TreasureApiClient.java
+│   │   │               ├── config/             # Configuration classes
+│   │   │               │   └── PropertyManager.java
+│   │   │               ├── core/               # Core framework classes
+│   │   │               │   └── DriverFactory.java
+│   │   │               ├── pages/              # Page Object classes
+│   │   │               │   ├── BasePage.java   # Base Page Object
+│   │   │               │   ├── basic/          # Basic UI components
+│   │   │               │   │   ├── AlertsPage.java
+│   │   │               │   │   ├── AllElementsPage.java
+│   │   │               │   │   ├── DragDropPage.java
+│   │   │               │   │   ├── FormsPage.java
+│   │   │               │   │   ├── IframesPage.java
+│   │   │               │   │   ├── TablesPage.java
+│   │   │               │   │   ├── WidgetsPage.java
+│   │   │               │   │   └── WindowsPage.java
+│   │   │               │   └── hardcore/       # Hardcore UI challenges
+│   │   │               │       ├── CanvasMapChallengePage.java
+│   │   │               │       ├── IframeInceptionChallengePage.java
+│   │   │               │       ├── MultiWindowChallengePage.java
+│   │   │               │       ├── ReactiveChaosChallengePage.java
+│   │   │               │       ├── ShadowDomChallengePage.java
+│   │   │               │       └── TimeWarpChallengePage.java
+│   │   │               └── utils/              # Utility classes
+│   │   │                   ├── CanvasUtils.java
+│   │   │                   ├── MultiWindowUtils.java
+│   │   │                   ├── NetworkUtils.java
+│   │   │                   ├── ScreenshotUtils.java
+│   │   │                   └── TimeUtils.java
+│   │   └── resources/                          # Resources
+│   │       └── log4j2.xml                      # Logging configuration
 │   └── test/
 │       ├── java/
 │       │   └── com/
 │       │       └── peliQAn/
 │       │           └── framework/
-│       │               ├── runners/         # TestNG runners
-│       │               ├── stepdefinitions/ # Cucumber step definitions
-│       │               ├── pact/            # Pact test implementations
-│       │               └── utils/           # Test utilities
+│       │               ├── api/                # API test classes
+│       │               │   └── advanced/       # Advanced API testing
+│       │               │       ├── AdvancedRestAssuredTest.java
+│       │               │       ├── pact/       # Advanced Pact tests
+│       │               │       │   ├── AdvancedPactConsumerTest.java
+│       │               │       │   └── AdvancedPactProviderTest.java
+│       │               │       └── wiremock/   # WireMock tests
+│       │               │           └── WireMockTest.java 
+│       │               ├── pact/               # Basic Pact tests
+│       │               │   ├── TreasureConsumerPactTest.java
+│       │               │   └── TreasureProviderPactTest.java
+│       │               ├── runners/            # TestNG runners
+│       │               │   ├── AdvancedApiTestRunner.java
+│       │               │   ├── ApiMethodsTest.java
+│       │               │   ├── ComprehensiveIntegrationTest.java
+│       │               │   ├── CucumberTestRunner.java
+│       │               │   ├── HardcoreChallengesTestRunner.java
+│       │               │   ├── ShadowDomChallengeTest.java
+│       │               │   └── TreasureApiTest.java
+│       │               └── stepdefinitions/    # Cucumber step definitions
+│       │                   ├── AdvancedApiSteps.java
+│       │                   ├── ApiTreasureSteps.java
+│       │                   ├── BasicApiSteps.java
+│       │                   ├── CanvasMapSteps.java
+│       │                   ├── Hooks.java
+│       │                   ├── IframeInceptionSteps.java
+│       │                   ├── MultiWindowSteps.java
+│       │                   ├── ReactiveChaosSteps.java
+│       │                   ├── ShadowDomSteps.java
+│       │                   └── TimeWarpSteps.java
 │       └── resources/
-│           ├── features/                    # Cucumber feature files
-│           ├── data/                        # Test data
-│           └── config/                      # Test configuration
-└── pom.xml                                  # Maven build file
+│           ├── config/                         # Test configuration
+│           │   └── config.properties
+│           └── features/                       # Cucumber feature files
+│               ├── api_advanced.feature        # Advanced API scenarios
+│               ├── api_basic.feature           # Basic API scenarios
+│               ├── api_treasures.feature       # Treasure API scenarios
+│               ├── ui_advanced.feature         # Advanced UI scenarios
+│               ├── ui_basic.feature            # Basic UI scenarios
+│               └── ui_hardcore.feature         # Hardcore UI scenarios
+└── pom.xml                                     # Maven build file
 ```
 
 ## Getting Started
@@ -90,16 +148,52 @@ mvn clean test
 ### Run UI tests only:
 ```bash
 mvn clean test -Dcucumber.filter.tags="@ui"
+# or use the dedicated TestNG XML file
+mvn clean test -DsuiteXmlFile=testng-ui.xml
 ```
 
 ### Run API tests only:
 ```bash
 mvn clean test -Dcucumber.filter.tags="@api"
+# or use the dedicated TestNG XML file
+mvn clean test -DsuiteXmlFile=testng-api.xml
+```
+
+### Run advanced API tests only:
+```bash
+mvn clean test -Dtest=AdvancedApiTestRunner
+```
+
+### Run WireMock tests only:
+```bash
+mvn clean test -Dtest=APIWireMockTestRunner
+```
+
+### Run Pact contract tests only:
+```bash
+mvn clean test -Dtest=APIPactTestRunner
+```
+
+### Run UI basic or advanced tests:
+```bash
+mvn clean test -Dtest=UIBasicTestRunner
+mvn clean test -Dtest=UIAdvancedTestRunner
 ```
 
 ### Run hardcore challenge tests only:
 ```bash
 mvn clean test -Dcucumber.filter.tags="@hardcore"
+# or use specific test runner
+mvn clean test -Dtest=HardcoreChallengesTestRunner
+```
+
+### Run tests by test group using ComprehensiveTestSuite:
+```bash
+# Choose one of the following groups:
+# ui-basic, ui-advanced, ui-hardcore
+# api-basic, api-advanced, api-treasures, api-wiremock, api-pact
+# all-ui, all-api, all
+mvn clean test -Dtest=ComprehensiveTestSuite -DtestGroup=api-advanced
 ```
 
 ### Run tests in parallel:

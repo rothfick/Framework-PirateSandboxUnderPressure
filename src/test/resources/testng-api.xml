@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PeliQAn API Test Suite" parallel="tests" thread-count="5">
+    <test name="API Basic Tests">
+        <parameter name="testGroup" value="api-basic"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+    
+    <test name="API Advanced Tests">
+        <parameter name="testGroup" value="api-advanced"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+    
+    <test name="API Treasure Tests">
+        <parameter name="testGroup" value="api-treasures"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+    
+    <test name="API WireMock Tests">
+        <parameter name="testGroup" value="api-wiremock"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+    
+    <test name="API PACT Tests">
+        <parameter name="testGroup" value="api-pact"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+</suite>
