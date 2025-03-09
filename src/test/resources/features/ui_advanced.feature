@@ -54,3 +54,14 @@ Feature: Advanced UI Components
     When I edit cell at row 0, column a with value "Updated Data"
     And I save the edits
     Then I should see a success message for the edit
+    
+  @ui
+  Scenario: Test with network throttling conditions
+    Given I am on the "all elements" page
+    When I enable network throttling with "Slow 3G" preset
+    And I click the load data button
+    Then I should see the loading indicator
+    And the data should load within a reasonable time
+    When I disable network throttling
+    And I reload the page
+    Then the data should load much faster

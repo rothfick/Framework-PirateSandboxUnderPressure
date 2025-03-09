@@ -50,3 +50,12 @@ Feature: Basic UI Components
     Then the table should be sorted by "Name" in "descending" order
     When I filter the table with "gold"
     Then the table should only show items containing "gold"
+    
+  @ui
+  Scenario: File upload and manipulation
+    Given I am on the "forms" page
+    When I select a file to upload
+    And I submit the file upload form
+    Then I should see a success message with the file name
+    When I download the uploaded file
+    Then the downloaded file should match the original file

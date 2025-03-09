@@ -56,3 +56,14 @@ Feature: Hardcore UI Challenges
     Then I should collect all time codes
     When I submit the time codes
     Then the validation should be successful
+    
+  @ui @hardcore
+  Scenario: Complete Reactive Chaos Challenge
+    Given I am on the "reactive-chaos" challenge page
+    When I start the reactive chaos challenge
+    And I monitor multiple data streams simultaneously
+    And I perform calculations on the captured values
+    And I progress through all challenge steps
+    Then I should receive a reactive chaos completion code
+    When I submit the reactive chaos code
+    Then the validation should be successful

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PeliQAn UI Test Suite" parallel="tests" thread-count="3">
+    <test name="UI Basic Tests">
+        <parameter name="testGroup" value="ui-basic"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+    
+    <test name="UI Advanced Tests">
+        <parameter name="testGroup" value="ui-advanced"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+    
+    <test name="UI Hardcore Tests">
+        <parameter name="testGroup" value="ui-hardcore"/>
+        <classes>
+            <class name="com.peliQAn.framework.runners.ComprehensiveTestSuite"/>
+        </classes>
+    </test>
+</suite>
