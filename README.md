@@ -133,10 +133,19 @@ mvn allure:serve
 - **Basic API Tests**: Tests HTTP methods, parameters, headers, cookies
 - **Treasure API Tests**: Comprehensive CRUD operations for treasures
 - **Authentication**: Testing auth endpoints and token handling
+- **Advanced API Tests**:
+  - **RestAssured Advanced**: JSON schema validation, response time validation, complex query parameters, etc.
+  - **WireMock**: API mocking, fault injection, network delays, stateful behavior simulation
+  - **Pact Advanced**: Comprehensive contract testing, provider state management, complex matchers
 
 ### Contract Testing
 - **Consumer-Driven Contracts**: Defines expectations for API interactions
 - **Provider Verification**: Ensures API implementations meet contract requirements
+- **Advanced Contract Techniques**:
+  - Type-based matchers for flexible contracts
+  - Provider state management for stateful testing
+  - Error response contract validation
+  - Bulk operation contract testing
 
 ## Edge Cases
 
@@ -160,21 +169,21 @@ The framework includes implementations for 15 edge cases for both UI and API tes
 15. Long-running operations and progress monitoring
 
 ### API Edge Cases
-1. Handling large payload responses
-2. Handling network timeouts and retries
-3. Authentication token expiration and refresh
-4. API rate limiting
-5. Handling diverse content types
-6. Request parameter validation
-7. Concurrent API requests handling
-8. Partial updates with PATCH
-9. Error responses and status code validation
-10. Header and cookie manipulation
-11. File uploads through API
-12. Search and filtering edge cases
-13. Pagination with various page sizes
-14. Data type validation and conversion
-15. HTTP method combinations for the same resource
+1. JSON schema validation of API responses
+2. Response time validation and performance thresholds
+3. Sequence of dependent API requests with data chaining
+4. Complex query parameters and filtering
+5. Error response validation (400, 404, 401, 403, 500)
+6. Mock API responses with WireMock
+7. Network fault and delay simulation
+8. Stateful behavior testing with scenarios
+9. Dynamic response generation based on requests
+10. Request body validation and matching
+11. Contract testing with type-based matchers
+12. Provider state management in contract tests
+13. Bulk operations and batch processing
+14. HTTP header and proxy manipulation
+15. Response templating and transformation
 
 ## Best Practices
 
