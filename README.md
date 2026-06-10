@@ -1,3 +1,20 @@
+<!-- README_PRESENTATION_START -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=140&color=0:111827,100:DC2626&text=Pirate%20Sandbox%20Under%20Pressure&fontColor=FFFFFF&fontSize=30&fontAlignY=42&desc=Advanced%20Java%20QA%20sandbox%20for%20hard%20UI%2C%20API%2C%20contracts%20and%20mocks&descAlignY=68&descSize=15" alt="Pirate Sandbox Under Pressure banner" />
+</p>
+
+<p align="center">
+  <img alt="Java: 11" src="https://img.shields.io/badge/Java-11-007396?style=for-the-badge" /> <img alt="UI: Selenium" src="https://img.shields.io/badge/UI-Selenium-43B02A?style=for-the-badge" /> <img alt="API: RestAssured" src="https://img.shields.io/badge/API-RestAssured-2563EB?style=for-the-badge" /> <img alt="Contracts: Pact" src="https://img.shields.io/badge/Contracts-Pact-7C3AED?style=for-the-badge" /> <img alt="Mocks: WireMock" src="https://img.shields.io/badge/Mocks-WireMock-DC2626?style=for-the-badge" /> <img alt="BDD: Cucumber" src="https://img.shields.io/badge/BDD-Cucumber-23D96C?style=for-the-badge" />
+</p>
+
+<table>
+  <tr><td><strong>Role signal</strong></td><td>Advanced SDET-style problem solving across UI, API and integrations</td></tr>
+<tr><td><strong>What to inspect</strong></td><td>hardcore UI features, API clients, Pact/WireMock tests, utilities</td></tr>
+<tr><td><strong>Best for</strong></td><td>Senior QA Automation, SDET, QA Lead technical screens</td></tr>
+</table>
+
+<!-- README_PRESENTATION_END -->
+
 # Pirate Sandbox Under Pressure
 
 Advanced Java QA automation sandbox for UI, API, contract, mock-service, and difficult browser-interaction scenarios.
